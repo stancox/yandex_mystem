@@ -45,7 +45,7 @@ module YandexMystem
     end
 
     def self.as_json(data)
-      Oj.load("[#{data.split("\n").join(',')}]", symbol_keys: true)
+      Oj.load("[#{data.encode('UTF-8').split("\n").join(',')}]", symbol_keys: true)
     end
   end
 
